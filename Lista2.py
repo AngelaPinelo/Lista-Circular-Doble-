@@ -1,6 +1,6 @@
 class Nodo:
-    def __init__(self,valor_):
-        self.valor = valor_
+    def __init__(self,dato):
+        self.valor = dato
         self.siguiente=None
         self.anterior=None
 
@@ -10,8 +10,8 @@ class ListaCircular:
         self.ultimo=None
 
     #Este método inserta al inicio pero no es del todo doble circular
-    '''def insertar2(self,valor_):
-        nuevo=Nodo(valor_)
+    '''def insertar2(self,dato):
+        nuevo=Nodo(dato)
         if (self.primero==None):
             self.primero=nuevo
         else:
@@ -20,8 +20,8 @@ class ListaCircular:
             self.primero=nuevo
             self.primero.anterior=self.ultimo'''
 
-    def insertaralfinal(self,valor_):
-        nuevo=Nodo(valor_)
+    def insertaralfinal(self,dato):
+        nuevo=Nodo(dato)
         if (self.primero==None):
             self.primero=self.ultimo=nuevo
         else:
@@ -41,10 +41,10 @@ class ListaCircular:
                 return
             aux=aux.siguiente
 
-    def buscar(self, valor_buscado):
+    def buscar(self, numero):
         aux=self.primero
         while(aux!=None):
-            if (aux.valor==valor_buscado):
+            if (aux.valor==numero):
                 print("actual: ",aux.valor)
                 print("siguiente: ",aux.siguiente.valor)
                 print('anterior: ',aux.anterior.valor)
